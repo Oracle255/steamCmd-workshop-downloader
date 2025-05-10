@@ -1,5 +1,7 @@
 # steamCmd-workshop-downloader
 
+Simple CLI program for batch downloading steamworkshop item ex: mods
+
 how to use:
 1. copy and paste the steamCmdWorkshopDownloader.py OR the exe files into main steamCMD directory (where the steamCMD exe is)
 2. run the program using your prefered python ide OR use the provided exe file
