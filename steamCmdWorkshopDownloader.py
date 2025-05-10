@@ -1,17 +1,28 @@
 import re
 import os
 import subprocess
+import sys
 #from flask import Flask, request, render_template_string
 
 # TODO : buat interface web dengan flask
 
 steamCmdPath = ""
 
+# bugfix error write file baru
+def get_abs_directory():
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)
+    else:
+        return os.path.dirname(os.path.abspath(__file__))
+
 def convertDownloadCommand():
     global steamCmdPath
     workshop_id = ""
     download_command = "workshop_download_item"
-    directory = os.path.dirname(os.path.abspath(__file__))
+    #directory = os.path.dirname(os.path.abspath(__file__))
+    #file_path_input = os.path.join(directory, "steam_list.txt")
+    #file_path_output = os.path.join(directory, "output_download_list.txt")
+    directory = get_abs_directory()
     file_path_input = os.path.join(directory, "steam_list.txt")
     file_path_output = os.path.join(directory, "output_download_list.txt")
     
